@@ -74,46 +74,29 @@ const schema = yup.object({
 });
 
 const RHFFormYup = () => {
-
   const [loading, setLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  } = useForm({
+  const {register,handleSubmit,reset,formState: { errors }} = useForm({
     resolver: yupResolver(schema)
   });
 
   const onSubmit = (data) => {
-
     setLoading(true);
-
     setTimeout(() => {
-
       console.log(data);
 
       toast.success("Your form has been submitted successfully!");
-
       reset();
       setLoading(false);
-
     }, 2000);
-
   };
 
   return (
     <Container className="mt-4">
-
       <h3>React Hook Form validation Using Yup</h3>
-
       <Form onSubmit={handleSubmit(onSubmit)}>
-
         <fieldset disabled={loading}>
-
           <Row>
-
             {/* First Name */}
             <Col md={6}>
               <Form.Group className="mb-3">
@@ -273,11 +256,8 @@ const RHFFormYup = () => {
                 )}
               </Button>
             </Col>
-
           </Row>
-
         </fieldset>
-
       </Form>
         <ToastContainer />
     </Container>
