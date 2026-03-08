@@ -1,0 +1,29 @@
+.avatar-group {
+  display: flex;
+  height: 50px;   /* important */
+  align-items: center;
+}
+
+.avatar-img {
+  margin-left: -15px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+ } 
+
+/* First avatar should not move left */
+.avatar-img:first-child {
+  margin-left: 0;
+}
+
+/* Hover Effect */
+.avatar-img:hover {
+  transform: translateY(-5px);
+  z-index: 10;
+ } 
+
+/* .avatar-img:hover {
+  transform: translateY(-6px) scale(1.05);
+  z-index: 20;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+} */
